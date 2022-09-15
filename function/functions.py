@@ -1,3 +1,6 @@
+from MyException.MyError import MyError
+
+
 def func_1(x: int):
     return x * x
 
@@ -14,10 +17,28 @@ def func_4(text: str) -> bool:
     else:
         return False
 
+def func_5(number: int) -> bool:
+    try:
+        if (number <= 0) or (number == 1):
+            raise MyError('Wrong input. Enter natural numbers starting from number 2')
+        k = 0
+        for i in range(2, number-1):
+            if number % i == 0:
+                k = k + 1
+        if k == 0:
+            return True
+        else:
+            return False
+    finally:
+        pass
+
+def f():
+    raise SystemExit(1)
 
 if __name__ == '__main__':
     print(func_3(7))
     print(func_3(-100))
     print(func_4('Abc'))
     print(func_4('bc'))
+    print(func_5(1))
 
