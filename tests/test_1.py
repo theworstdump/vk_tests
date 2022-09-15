@@ -17,9 +17,9 @@ def test_4(input_text, result):
     assert func_4(input_text) == result
 @pytest.mark.parametrize("num", [0, 1])
 def test_5(num):
-    with pytest.raises(MyError) as error:
+    with pytest.raises(MyError) as ex:
         func_5(num)
-    assert 'Wrong input. Enter natural numbers starting from number 2' == error.value.args[0]
+    assert 'Wrong input. Enter natural numbers starting from number 2' == ex.value.args[0]
 
 def test_mytest():
     with pytest.raises(SystemExit):

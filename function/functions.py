@@ -29,8 +29,9 @@ def func_5(number: int) -> bool:
             return True
         else:
             return False
-    finally:
-        pass
+    except MyError as err:
+        print(err)
+        raise
 
 def f():
     raise SystemExit(1)
