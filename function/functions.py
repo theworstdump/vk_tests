@@ -18,20 +18,16 @@ def func_4(text: str) -> bool:
         return False
 
 def func_5(number: int) -> bool:
-    try:
-        if (number <= 0) or (number == 1):
-            raise MyError('Wrong input. Enter natural numbers starting from number 2')
-        k = 0
-        for i in range(2, number-1):
-            if number % i == 0:
-                k = k + 1
-        if k == 0:
-            return True
-        else:
-            return False
-    except MyError as err:
-        print(err)
-        raise
+    if (number <= 0) or (number == 1):
+        raise MyError('Wrong input. Enter natural numbers starting from number 2')
+    k = 0
+    for i in range(2, number-1):
+        if number % i == 0:
+            k = k + 1
+    if k == 0:
+        return True
+    else:
+        return False
 
 def f():
     raise SystemExit(1)
